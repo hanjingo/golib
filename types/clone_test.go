@@ -5,28 +5,28 @@ import (
 	"testing"
 )
 
-type sub_class struct {
-	id   int32
-	name string
+type SubClass struct {
+	Id   int32
+	Name string
 }
 
-type class struct {
-	id   int32
-	idx  uint32
-	name string
-	sub  *sub_class
+type Class struct {
+	Id   int32
+	Idx  uint32
+	Name string
+	Sub  *SubClass
 }
 
-var src = &class{
-	id:   1,
-	idx:  2,
-	name: "test",
-	sub: &sub_class{
-		id:   3,
-		name: "sub_test",
+var src = &Class{
+	Id:   1,
+	Idx:  2,
+	Name: "test",
+	Sub: &SubClass{
+		Id:   3,
+		Name: "sub_test",
 	},
 }
-var dst = &class{}
+var dst = &Class{}
 
 // go test -v clone.go clone_test.go -test.run TestDeepCopy
 func TestDeepCopy(t *testing.T) {
