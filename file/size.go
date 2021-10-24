@@ -1,4 +1,4 @@
-package golib
+package file
 
 type SIZE int64
 

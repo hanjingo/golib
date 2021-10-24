@@ -1,4 +1,4 @@
-package golib
+package other
 
 import (
 	"errors"
