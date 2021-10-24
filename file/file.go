@@ -62,3 +62,13 @@ func Create(filePathName string) (*os.File, error) {
 	}
 	return nil, errors.New("file already exist")
 }
+
+func IsFile(file_path_name string) bool {
+	s, err := os.Stat(file_path_name)
+	return err == nil && !s.IsDir()
+}
+
+func IsDir(path string) bool {
+	s, err := os.Stat(path)
+	return err == nil && s.IsDir()
+}
